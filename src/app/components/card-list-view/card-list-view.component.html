@@ -1,0 +1,17 @@
+<h1>{{ title }}</h1>
+<ng-container [ngSwitch]="mode">
+  <div class="cards-layout" *ngSwitchCase="'card'">
+    <div class="card" *ngFor="let item of items">
+      <ng-container
+        *ngTemplateOutlet="cardItemTemplate; context: { $implicit: item }"
+      ></ng-container>
+    </div>
+  </div>
+  <ul *ngSwitchCase="'list'">
+    <li *ngFor="let item of items">
+      <ng-container
+        *ngTemplateOutlet="listItemTemplate; context: { $implicit: item }"
+      ></ng-container>
+    </li>
+  </ul>
+</ng-container>
