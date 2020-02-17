@@ -1,20 +1,36 @@
 <div class="container">
   <div class="my-row">
-    <h1 class="albums-title">Albumi porodice neke</h1>
-  </div>
-  <div class="my-row">
     <div class="my-column">
-      <app-card-list-view [items]="albums" [mode]="mode" class="card-list">
+      <app-card-list-view
+        [title]="title"
+        [items]="albums"
+        [mode]="mode"
+        class="card-list"
+      >
         <div *appCardItem="let item">
           <div class="card">
             <div class="wrapper-thumbnail">
               <img src="assets/imgs/169.png" alt="Image" class="img-size" />
             </div>
-            <h3>{{ item.id }}</h3>
+            <div class="card-content">
+              <h3 class="album-title" (click)="albumClick(item.id)">
+                {{ item.title }}
+              </h3>
+              <h4 class="creator">kreirao: {{ item.creator.name }}</h4>
+            </div>
           </div>
         </div>
         <li *appListItem="let item">
-          <h2>{{ item.id }}</h2>
+          <div class="list-item-container">
+            <img src="assets/imgs/169.png" alt="Image" class="img-size" />
+
+            <div class="list-item-content">
+              <h3 class="album-title" (click)="albumClick(item.id)">
+                {{ item.title }}
+              </h3>
+              <h4 class="creator">kreirao: {{ item.creator.name }}</h4>
+            </div>
+          </div>
         </li>
       </app-card-list-view>
     </div>

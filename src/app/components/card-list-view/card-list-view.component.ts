@@ -15,15 +15,19 @@ import { ListItemDirective } from "src/app/directives/list-item.directive";
 })
 export class CardListViewComponent implements OnInit {
   @Input() items: any[] = [];
-  @Input() mode: "card" | "list" = "card";
+  @Input() mode = "card";
   @Input() title = "";
 
   @ContentChild(CardItemDirective, { read: TemplateRef, static: false })
-  cardItemTemplate;
+  cardItemTemplate: TemplateRef<any>;
   @ContentChild(ListItemDirective, { read: TemplateRef, static: true })
   listItemTemplate;
 
   constructor() {}
 
   ngOnInit() {}
+
+  switchMode(mode: string) {
+    this.mode = mode;
+  }
 }

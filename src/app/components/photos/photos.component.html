@@ -1,0 +1,40 @@
+<app-filter (textChange)="filterValue = $event"></app-filter>
+<div class="container">
+  <div class="my-row">
+    <div class="my-column">
+      <app-card-list-view [items]="thumbnails" [mode]="mode" class="card-list">
+        <div *appCardItem="let item">
+          <div
+            class="card"
+            [hide]="!item.title.includes(filterValue)"
+            [display]="'flex'"
+          >
+            <div class="wrapper-thumbnail">
+              <img src="assets/imgs/169.png" alt="Image" class="img-size" />
+            </div>
+            <div class="card-content">
+              <h1>{{ item.title }}</h1>
+              <i class="fas fa-trash" (click)="deletePhoto(item.id)"></i>
+            </div>
+          </div>
+        </div>
+        <li *appListItem="let item">
+          <div
+            class="list-item-container"
+            [hide]="!item.title.includes(filterValue)"
+            [display]="'flex'"
+          >
+            <img src="assets/imgs/169.png" alt="Image" class="img-size" />
+
+            <div class="list-item-content">
+              <h3 class="photo-title" (click)="albumClick(item.id)">
+                {{ item.title }}
+              </h3>
+              <i class="fas fa-trash" (click)="deletePhoto(item.id)"></i>
+            </div>
+          </div>
+        </li>
+      </app-card-list-view>
+    </div>
+  </div>
+</div>

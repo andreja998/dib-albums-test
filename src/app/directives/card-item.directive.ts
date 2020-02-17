@@ -1,10 +1,8 @@
-import { Directive } from '@angular/core';
+import { Directive, TemplateRef } from "@angular/core";
 
 @Directive({
-  selector: '[appCardItem]'
+  selector: "[appCardItem]"
 })
 export class CardItemDirective {
-
-  constructor() { }
-
+  constructor(public tpl: TemplateRef<any>) {}
 }

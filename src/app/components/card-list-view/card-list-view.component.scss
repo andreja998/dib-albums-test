@@ -7,12 +7,48 @@
 
 .card {
   flex: 0 0 30%;
-  margin-left: auto;
-  margin-right: auto;
+}
+.active {
+  color: black !important;
+}
+ul {
+  padding-left: 0;
+  li {
+    list-style: none;
+  }
+}
+.modes {
+  display: flex;
+  h1 {
+    flex: 1 1 auto;
+    margin-top: 15px;
+    font-weight: 100;
+    font-size: 5vw;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+  }
+  .icons {
+    flex: 0 0 auto;
+    margin-top: 25px;
+    font-size: 20px;
+    align-self: flex-end;
+    margin-bottom: 25px;
+    i {
+      color: gray;
+      margin-left: 10px;
+    }
+
+    i:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 @media (max-width: 767.98px) {
   .card {
     flex: 0 0 45%;
+  }
+  .modes h1 {
+    font-size: 7vw;
   }
 }

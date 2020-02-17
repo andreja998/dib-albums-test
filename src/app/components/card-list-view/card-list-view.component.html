@@ -1,4 +1,18 @@
-<h1>{{ title }}</h1>
+<div class="modes">
+  <h1>{{ title }}</h1>
+  <div class="icons">
+    <i
+      (click)="switchMode('card')"
+      [class.active]="mode == 'card'"
+      class="fas fa-th-large"
+    ></i>
+    <i
+      (click)="switchMode('list')"
+      [class.active]="mode == 'list'"
+      class="fas fa-bars"
+    ></i>
+  </div>
+</div>
 <ng-container [ngSwitch]="mode">
   <div class="cards-layout" *ngSwitchCase="'card'">
     <div class="card" *ngFor="let item of items">
