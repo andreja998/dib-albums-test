@@ -17,3 +17,7 @@ export class Photo extends BasePhoto {
 export class User {
   constructor(public id: number, public name: string) {}
 }
+
+export class ConfirmDialogModel {
+  constructor(public title: string, public message: string) {}
+}

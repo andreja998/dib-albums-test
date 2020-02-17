@@ -15,6 +15,16 @@ import { FilterComponent } from "./components/filter/filter.component";
 import { PhotosComponent } from "./components/photos/photos.component";
 import { HideDirective } from "./directives/hide.directive";
 import { PhotoComponent } from "./components/photos/photo/photo.component";
+import {
+  MatDialogModule,
+  MAT_DIALOG_DEFAULT_OPTIONS,
+  MatDialogRef,
+  MatDialog,
+  MAT_DIALOG_DATA
+} from "@angular/material/dialog";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { DialogComponent } from "./components/dialog/dialog.component";
+import { CustomMaterialModule } from "./custom-material.module";
 
 @NgModule({
   declarations: [
@@ -28,16 +38,27 @@ import { PhotoComponent } from "./components/photos/photo/photo.component";
     FilterComponent,
     PhotosComponent,
     HideDirective,
-    PhotoComponent
+    PhotoComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CustomMaterialModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } },
+    {
+      provide: MatDialogRef,
+      useValue: {}
+    },
+    { provide: MAT_DIALOG_DATA, useValue: [] }
+  ],
+  entryComponents: [DialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,7 +1,10 @@
-<input
-  type="text"
-  class="search-input"
-  placeholder="Pretraži"
-  [(ngModel)]="searchText"
-  (ngModelChange)="textChanged()"
-/>
+<div class="search">
+  <i class="fas fa-search"></i>
+  <input
+    type="text"
+    class="search-input"
+    placeholder="Pretraži"
+    [(ngModel)]="searchText"
+    (ngModelChange)="textChanged()"
+  />
+</div>

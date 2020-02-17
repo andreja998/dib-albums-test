@@ -1,13 +1,24 @@
-<app-filter (textChange)="filterValue = $event"></app-filter>
 <div class="container">
   <div class="my-row">
     <div class="my-column">
-      <app-card-list-view [items]="thumbnails" [mode]="mode" class="card-list">
+      <app-card-list-view
+        [title]="albumTitle"
+        [items]="thumbnails"
+        [mode]="mode"
+        class="card-list"
+      >
+        <app-filter
+          class="filter"
+          (textChange)="filterValue = $event"
+        ></app-filter>
         <div *appCardItem="let item">
           <div
             class="card"
             [hide]="!item.title.includes(filterValue)"
             [display]="'flex'"
+            [style.background-color]="
+              deleted.includes(item.id) ? 'red' : 'none'
+            "
           >
             <div class="wrapper-thumbnail">
               <img src="assets/imgs/169.png" alt="Image" class="img-size" />
@@ -23,6 +34,9 @@
             class="list-item-container"
             [hide]="!item.title.includes(filterValue)"
             [display]="'flex'"
+            [style.background-color]="
+              deleted.includes(item.id) ? 'red' : 'none'
+            "
           >
             <img src="assets/imgs/169.png" alt="Image" class="img-size" />
 

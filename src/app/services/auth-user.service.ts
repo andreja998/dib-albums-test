@@ -2,11 +2,13 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
+import { User } from "../models";
 
 @Injectable({
   providedIn: "root"
 })
 export class AuthUserService {
+  user: User;
   constructor(private http: HttpClient) {}
 
   login(Username: string, Password: string): Observable<any> {
@@ -17,7 +19,7 @@ export class AuthUserService {
       })
       .pipe(
         map(res => {
-          localStorage.setItem("token", res["token"]);
+          localStorage.setItem("token", "here goes our token");
         })
       );
   }

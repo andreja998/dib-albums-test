@@ -10,6 +10,7 @@ import { ListItemDirective } from "src/app/directives/list-item.directive";
 import { AlbumService } from "src/app/services/album.service";
 import { Album, User } from "src/app/models";
 import { Router } from "@angular/router";
+import { AuthUserService } from "src/app/services/auth-user.service";
 
 @Component({
   selector: "app-albums",
@@ -21,19 +22,13 @@ export class AlbumsComponent implements OnInit {
   albums: Album[] = [];
   title = "Albumi porodice neke";
 
-  constructor(private albumService: AlbumService, private router: Router) {}
+  constructor(
+    private albumService: AlbumService,
+    private router: Router,
+    private authUser: AuthUserService
+  ) {}
 
   ngOnInit() {
-    // for (let i = 0; i < 10; i++) {
-    //   this.albums.push(
-    //     new Album(
-    //       i,
-    //       "assets/imgs/169.png",
-    //       "Naslov neki ovog albuma " + i.toString(),
-    //       new User(1, "Andreja")
-    //     )
-    //   );
-    // }
     this.albumService.getAlbums(1).subscribe(albums => {
       this.albums = albums;
     });
@@ -51,9 +46,5 @@ export class AlbumsComponent implements OnInit {
 
   albumClick(albumId: number) {
     this.router.navigate(["/photos"], { queryParams: { album_id: albumId } });
-  }
-
-  switchMode() {
-    this.mode = this.mode === "list" ? "card" : "list";
   }
 }

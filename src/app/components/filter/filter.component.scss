@@ -1,0 +1,26 @@
+.search-input {
+  font-size: 20px;
+  height: 40px;
+  margin-top: 20px;
+  background-color: white;
+  padding-bottom: 0px;
+  padding-top: 5px;
+  border-bottom: 1px solid black;
+  //   border-bottom-color: black;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  box-shadow: none;
+  margin-bottom: 20px;
+  text-indent: 30px;
+}
+
+.search {
+  position: relative;
+}
+.search i {
+  position: absolute;
+  bottom: 30px;
+  left: 2px;
+  font-size: 20px;
+}

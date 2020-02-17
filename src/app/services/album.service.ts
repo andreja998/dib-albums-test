@@ -12,6 +12,25 @@ export class AlbumService {
 
   constructor(private http: HttpClient) {}
 
+  getAlbum(albumId: number): Observable<Album> {
+    return this.http.get(this.baseUrl + "albums", {}).pipe(
+      map((res: any) => {
+        let album: Album;
+        res.forEach(element => {
+          if (element["id"] === albumId) {
+            album = new Album(
+              element["id"],
+              null,
+              element["title"],
+              new User(element["userId"], null)
+            );
+          }
+        });
+        return album;
+      })
+    );
+  }
+
   getAlbums(userId: number): Observable<Album[]> {
     return this.http.get(this.baseUrl + "albums", {}).pipe(
       switchMap((res: any) => {

@@ -13,6 +13,7 @@
     ></i>
   </div>
 </div>
+<ng-content> </ng-content>
 <ng-container [ngSwitch]="mode">
   <div class="cards-layout" *ngSwitchCase="'card'">
     <div class="card" *ngFor="let item of items">

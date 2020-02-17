@@ -15,7 +15,7 @@ import { ListItemDirective } from "src/app/directives/list-item.directive";
 })
 export class CardListViewComponent implements OnInit {
   @Input() items: any[] = [];
-  @Input() mode = "card";
+  @Input() mode = "list";
   @Input() title = "";
 
   @ContentChild(CardItemDirective, { read: TemplateRef, static: false })
