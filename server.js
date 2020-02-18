@@ -14,9 +14,9 @@ app.use((req, res, next) => {
   );
   next();
 });
-app.use(express.static(__dirname + "/dist/frontend"));
+app.use(express.static(__dirname + "/dist/dib-andreja"));
 app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname + "/dist/frontend/index.html"));
+  res.sendFile(path.join(__dirname + "/dist/dib-andreja/index.html"));
 });
 app.listen(port);
 console.log("Port: " + port);
