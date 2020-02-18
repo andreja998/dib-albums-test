@@ -1,4 +1,5 @@
 # DibAndreja
+App is deployed here https://andreja998.github.io/dib-albums-test/login
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
