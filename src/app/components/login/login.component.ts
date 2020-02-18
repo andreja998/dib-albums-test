@@ -26,8 +26,12 @@ export class LoginComponent implements OnInit {
 
   onLogin() {
     console.log("LOGIIIN");
-    localStorage.setItem("token", "here goes the token");
-    this.router.navigate(["albums"]);
+    if (this.loginForm.invalid) {
+    } else {
+      localStorage.setItem("token", "here goes the token");
+      this.router.navigate(["/albums"]);
+    }
+
     // this.authUser
     //   .login(
     //     this.loginForm.get("email").value,

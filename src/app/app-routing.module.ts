@@ -6,6 +6,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { AuthGuard } from "./guards/auth.guard";
 
 const routes: Routes = [
+  { path: "", redirectTo: "albums", pathMatch: "full" },
   {
     path: "albums",
     component: AlbumsComponent,

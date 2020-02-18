@@ -20,9 +20,8 @@
               deleted.includes(item.id) ? 'red' : 'none'
             "
           >
-            <div class="wrapper-thumbnail">
-              <img src="assets/imgs/169.png" alt="Image" class="img-size" />
-            </div>
+            <img src="assets/imgs/169.png" alt="Image" class="img-size" />
+
             <div class="card-content">
               <h1>{{ item.title }}</h1>
               <i class="fas fa-trash" (click)="deletePhoto(item.id)"></i>

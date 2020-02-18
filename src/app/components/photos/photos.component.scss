@@ -7,12 +7,15 @@
 .my-column {
   display: flex;
   flex-direction: column;
-  //   flex-basis: 100%;
+  flex-basis: 100%;
+  width: 100%;
   flex: 1;
 }
 .img-size {
-  object-fit: contain;
-  height: 193px;
+  // object-fit: contain;
+  // height: 193px;
+  flex: 0 0 auto;
+  max-height: 193px;
 }
 .card {
   display: flex;
@@ -23,6 +26,7 @@
   margin-right: auto;
 }
 .container {
+  display: flex;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
@@ -32,9 +36,9 @@
   align-content: center;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 i {
-  margin-top: auto;
   color: gray;
 }
 i:hover {
@@ -49,9 +53,10 @@ i:hover {
   }
   i {
     flex: 0 0 auto;
-    margin-top: 25px;
     font-size: 20px;
-    align-self: flex-start;
+    padding-left: 5px;
+    margin-top: 20px;
+    margin-bottom: auto;
   }
 }
 .filter {
@@ -60,13 +65,16 @@ i:hover {
 .list-item-container {
   display: flex;
   margin-bottom: 20px;
+  i {
+    margin-top: auto;
+  }
   img {
     width: auto;
     flex: 0 0 auto;
     max-height: 193px;
   }
   .list-item-content {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     h3 {
@@ -77,20 +85,35 @@ i:hover {
     padding-left: 15px;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .list-item-container {
     img {
       max-width: 220px;
       height: auto;
+      align-self: flex-start;
+      flex: 1;
+      min-width: 200px;
     }
+  }
+  .card-list {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card-content h1 {
+    font-size: 4vw;
+  }
+  .card img {
+    width: 100%;
+    height: auto;
+    // object-fit: contain;
+    align-self: flex-start;
   }
   .photo-title {
     font-size: 16px;
   }
-  .card-list {
-    width: min-content;
-  }
   .container {
     width: 100%;
+    margin: 0;
+    padding: 0;
   }
 }

@@ -7,12 +7,11 @@
 .my-column {
   display: flex;
   flex-direction: column;
-  //   flex-basis: 100%;
   flex: 1;
 }
 .img-size {
-  object-fit: contain;
-  height: 193px;
+  flex: 0 0 auto;
+  max-height: 193px;
 }
 .card {
   display: flex;
@@ -52,7 +51,9 @@
     max-height: 193px;
   }
   .list-item-content {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
     h3 {
       margin-top: 0;
       margin-bottom: 0;
@@ -65,6 +66,9 @@
     img {
       max-width: 220px;
       height: auto;
+      align-self: flex-start;
+      flex: 1;
+      min-width: 200px;
     }
   }
   .album-title {
@@ -73,8 +77,11 @@
   .creator {
     font-size: 13px;
   }
-  .card-list {
-    width: min-content;
+  .card img {
+    width: 100%;
+    height: auto;
+    // object-fit: contain;
+    align-self: flex-start;
   }
   .container {
     width: 100%;

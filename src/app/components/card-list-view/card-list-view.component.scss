@@ -5,7 +5,7 @@
   justify-content: space-between;
 }
 
-.card {
+.card-item {
   flex: 0 0 30%;
 }
 .active {
@@ -17,6 +17,16 @@ ul {
     list-style: none;
   }
 }
+.container {
+  width: 100%;
+}
+.list {
+  width: 100%;
+  li {
+    width: 100%;
+  }
+}
+
 .modes {
   display: flex;
   h1 {
@@ -29,9 +39,9 @@ ul {
   }
   .icons {
     flex: 0 0 auto;
-    margin-top: 25px;
-    font-size: 20px;
-    align-self: flex-end;
+    margin-top: 10px;
+    font-size: 30px;
+    align-self: center;
     margin-bottom: 25px;
     i {
       color: gray;
@@ -45,8 +55,11 @@ ul {
 }
 
 @media (max-width: 767.98px) {
-  .card {
+  .card-item {
     flex: 0 0 45%;
+  }
+  .icons {
+    font-size: 20px;
   }
   .modes h1 {
     font-size: 7vw;
